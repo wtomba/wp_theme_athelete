@@ -6,7 +6,7 @@
   $category = get_category(get_query_var('cat'));
   $posts = get_posts(array('category__in' => array($category->term_id), 'post_status'=>'publish', 'order'=>'ASC' ));
 ?>
-<div class="large-8 columns">
+<div class="large-8 medium-7 columns">
   <div class="post-container">
     <div class="row">
       <?php
@@ -29,7 +29,7 @@
 <?php wp_reset_query(); ?>
 
 <!-- Right Sidebars -->
-<div class="large-4 columns">
+<div class="large-4 medium-5 columns">
   <div class="sidebar">
     <div class="border-top"></div>
     <div class="latest-posts">

@@ -1,15 +1,8 @@
 <!-- Header -->
 <?php get_header(); ?>
 
-<!-- Left Sidebar -->
-<?php 
-  if (is_active_sidebar('left_sidebar_1')) {
-    dynamic_sidebar('left_sidebar_1');
-  } 
-?>
-
 <!-- Content -->
-<div class="large-12 columns">
+<div class="large-8 medium-7 columns">
   <?php
     if (have_posts()) :
       while(have_posts()) : the_post();
@@ -38,6 +31,20 @@
         </div>
     </div>
     <?php } ?>
+</div>
+
+<!-- Right Sidebars -->
+<div class="large-4 medium-5 columns">
+  <div class="sidebar">
+    <div class="border-top"></div>
+    <div class="latest-posts">
+      <?php
+        if (is_active_sidebar('right_sidebar_1')) {
+          dynamic_sidebar('right_sidebar_1');
+        }
+      ?>
+    </div>
+  </div>
 </div>
 
 <!-- Footer -->

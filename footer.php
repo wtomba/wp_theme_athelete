@@ -1,6 +1,61 @@
       </div>
       <footer class="site-footer">
-        <p><?php bloginfo('name'); ?> - &copy; <?php echo date('Y'); ?></p>
+        <div class="row" data-equalizer>
+            <!-- footer Left Widget -->
+            <div class="large-3 medium-6 columns">
+              <div class="footer-widget">
+                <div class="latest-posts" data-equalizer-watch>
+                  <?php
+                    if (is_active_sidebar('footer_left1')) {
+                      dynamic_sidebar('footer_left1');
+                    }
+                  ?>
+                </div>
+              </div>
+            </div>
+
+            <!-- footer Center Widget -->
+            <div class="large-3 medium-6 columns">
+              <div class="footer-widget">
+                <div class="latest-posts" data-equalizer-watch>
+                  <?php
+                    if (is_active_sidebar('footer_left2')) {
+                      dynamic_sidebar('footer_left2');
+                    }
+                  ?>
+                </div>
+              </div>
+            </div>
+
+            <!-- footer Right Widget -->
+            <div class="large-3 medium-6 columns">
+              <div class="footer-widget">
+                <div class="latest-posts" data-equalizer-watch>
+                  <?php
+                    if (is_active_sidebar('footer_right1')) {
+                      dynamic_sidebar('footer_right1');
+                    }
+                  ?>
+                </div>
+              </div>
+            </div>
+
+            <!-- footer Right Widget -->
+            <div class="large-3 medium-6 columns">
+              <div class="footer-widget">
+                <div class="latest-posts" data-equalizer-watch>
+                  <?php
+                    if (is_active_sidebar('footer_right2')) {
+                      dynamic_sidebar('footer_right2');
+                    }
+                  ?>
+                </div>
+              </div>
+            </div>
+            <div class="large-12 columns">
+              <p class="warning label right"><?php bloginfo('name'); ?> - &copy; <?php echo date('Y'); ?></p>
+            </div>
+        </div>
       </footer>
     </div>
     <script type="text/javascript">
@@ -73,9 +128,14 @@
           }
         });
 
-        $(".category-nav ul li:has(.current-cat-parent)").find("ul").show();
-
-        $(".map iframe").height($(".map iframe").width() * 0.6);
+        $(".expand-comments").click(function () {
+          $(".comments").slideToggle("slow");
+          if ($(".comments").is(":visible")) {
+              var top = $(".expand-comments").offset().top - ($(".main-nav").height() + $(".form-container").height());
+              $("body, html").animate({ scrollTop:  top}, '500');
+              $(".comments textarea").focus();
+            }
+        });
       });
 
     </script>

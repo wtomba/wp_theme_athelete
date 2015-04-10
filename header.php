@@ -33,7 +33,7 @@
         </div>
         <?php if (is_page("hem")) { ?>
           <div class="slider-container">
-            <?php echo do_shortcode("[metaslider id=37]"); ?>   
+            <?php echo do_shortcode("[metaslider id=22]"); ?>   
           </div>
           
           <div class="slider-form-container clearfix">
