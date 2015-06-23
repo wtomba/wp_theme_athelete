@@ -4,7 +4,7 @@
 <!-- Content -->
 <?php
   $category = get_category(get_query_var('cat'));
-  $posts = get_posts(array('category__in' => array($category->term_id), 'post_status'=>'publish', 'order'=>'ASC' ));
+  $posts = get_posts(array('category__in' => array($category->term_id), 'post_status'=>'publish', 'order'=>'DESC' ));
 ?>
 <div class="large-8 medium-7 columns">
   <div class="post-container">

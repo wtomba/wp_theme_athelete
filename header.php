@@ -13,7 +13,7 @@
 <html <?php language_attributes(); ?> >
   <head>
     <meta charset="<?php bloginfo('charset') ?>">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title><?php bloginfo('name'); ?></title>
 
@@ -36,46 +36,52 @@
             <?php echo do_shortcode("[metaslider id=22]"); ?>   
           </div>
           
-          <div class="slider-form-container clearfix">
+<!--           <div class="slider-form-container clearfix">
             <div class="row">
               <div class="large-12 columns">
                 <?php get_search_form(); ?>
               </div>
             </div>
-          </div>  
+          </div>   -->
         <?php } else { ?>
           <div class="search-container">
             <div class="form-container clearfix">
               <div class="row">
                 <div class="large-12 columns">
-                  <?php get_search_form(); ?>
+                  <?php //get_search_form(); ?>
                 </div>
               </div>
             </div>
           </div>
         <?php } ?>
-        <div class="main-nav">
-          <div class="row">
-            <div class="clearfix mobile-container">
-              <div class="small-8 columns menu-toggle">
-                <span><i class="fi-align-justify"></i>MENY</span>
+        <div class="main-nav-container">
+          <div class="main-nav">
+            <div class="row">
+              <div class="clearfix mobile-container">
+                <div class="small-12 columns menu-toggle">
+                  <span><i class="fi-align-justify"></i>MENY</span>
+                </div>
+          <!--       <div class="small-4 columns search-toggle">                
+                  <span><i class="fi-magnifying-glass"></i>SÖK</span>
+                </div> -->
               </div>
-              <div class="small-4 columns search-toggle">                
-                <span><i class="fi-magnifying-glass"></i>SÖK</span>
-              </div>
+              <nav class="clearfix nav-menu">
+                <?php wp_nav_menu( array(
+                  'theme_location' => 'main-menu',
+                  'container' => false,
+                ) ); ?>
+              </nav>
             </div>
-            <nav class="clearfix">
-              <?php wp_nav_menu( array(
-                'theme_location' => 'main-menu',
-                'container' => false,
-              ) ); ?>
-            </nav>
           </div>
         </div>
       </header>
       <!-- /Site header -->
-      <div class="row">
-        <div class="large-12 columns">
-          <?php if (function_exists('cgi_breadcrumbs')) cgi_breadcrumbs(); ?>
-        </div>
+      <?php if (is_page("hem")) { ?>
+        <div style="min-height: 19.8rem;" class="row">
+      <?php } else { ?>
+        <div style="padding-top: 2rem;  min-height: 19.8rem;" class="row">
+      <?php } ?>
+ <!--        <div class="large-12 columns">
+          <?php //if (function_exists('cgi_breadcrumbs')) cgi_breadcrumbs(); ?>
+        </div> -->
 

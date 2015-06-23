@@ -197,9 +197,21 @@
       <style type="text/css">
         /* Main Menu */
           .site-header .search-container {
-            height: 140px;
+            height: 12.5rem;
             background: url(<?php header_image(); ?>);
             border-color: <?php echo get_theme_mod('main_menu_background_color'); ?> !important;
+          }
+          .container p::selection, .container div::selection, .container h1::selection , .container h2::selection , .container h3::selection,
+          .container h4::selection, .container a::selection , .container span::selection , .container li::selection, .container img::selection,
+          .container th::selection, .container td::selection, .container header::selection, .container ol::selection, .container caption::selection,
+          .container ul::selection    {
+            background: <?php echo get_theme_mod('content_border_color'); ?> !important; /* WebKit/Blink Browsers */
+          }
+          .container p::-moz-selection, .container div::-moz-selection, .container h1::-moz-selection , .container h2::-moz-selection , .container h3::-moz-selection,
+          .container h4::-moz-selection, .container a::-moz-selection , .container span::-moz-selection , .container li::-moz-selection, .container img::-moz-selection,
+          .container th::-moz-selection, .container td::-moz-selection, .container header::-moz-selection, .container ol::-moz-selection, .container caption::-moz-selection,
+          .container ul::-moz-selection    {
+            background: <?php echo get_theme_mod('content_border_color'); ?> !important; /* WebKit/Blink Browsers */
           }
           .site-header .main-nav,
           .category-nav-container .category-menu-toggle { 
